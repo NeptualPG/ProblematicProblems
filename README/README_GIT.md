@@ -1,3 +1,6 @@
+
+## GOOO TO THIS https://education.github.com/git-cheat-sheet-education.pdf
+
 # ✅ Clone the repo (first time)
 
 bash
