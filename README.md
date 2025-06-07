@@ -130,7 +130,7 @@ Rankings y perfiles públicos
 Autor
 Desarrollado por NeptualPG
 
-"La lógica vence a la suerte. Siempre."
+"La lógica vence."
 
 
 
