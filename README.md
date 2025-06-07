@@ -132,15 +132,6 @@ Desarrollado por NeptualPG
 
 "La lógica vence a la suerte. Siempre."
 
-yaml
-Copy
-Edit
-
----
-
-¿Quieres que también te genere el archivo `email_template.html` o el código base para el login/backend? Puedo ayudarte con eso también.
-
-
 
 
 
