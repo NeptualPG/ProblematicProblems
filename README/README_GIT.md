@@ -1,43 +1,69 @@
+# Configuración del Entorno Virtual (venv)
 
-## GOOO TO THIS https://education.github.com/git-cheat-sheet-education.pdf
+## Pasos básicos después de clonar el repositorio
 
-# ✅ Clone the repo (first time)
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/NeptualPG/ProblematicProblems.git
+   ```
+2. **Crear el entorno virtual**
+   ```bash
+   # Windows
+   python -m venv venv
 
-bash
-Copy
-Edit
+   # Linux/macOS
+   python3 -m venv venv
+   ```
+3. **Activar el entorno virtual**
+   ```bash
+   # Windows (CMD o PowerShell)
+   venv\Scripts\activate
 
-## git clone https://github.com/NeptualPG/ProblematicProblems.git
+   # Linux/macOS
+   source venv/bin/activate
+   ```
+4. **Instalar dependencias**
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. **Si no existe `requirements.txt`, puedes generarlo con**
+    ```bash
+    pip freeze > requirements.txt
+    ```
+6. **Verificar instalación**
+   ```bash
+   python -m django --version
+   ```
+7. **Desactivar entorno virtual (opcional)**
+   ```bash
+   deactivate
+   ```
 
-cd ProblematicProblems
-💾 Save your changes (after editing files)
-bash
-Copy
-Edit
+---
 
-# git add .
-# git commit -m "Your message here"
+## Usar una versión específica de Python (opcional)
 
-🔄 Pull latest changes (before push)
+Si necesitas especificar una versión concreta de Python (por ejemplo, 3.11):
+[3.11.2](https://www.python.org/downloads/release/python-3112/)
+1. **Crear entorno virtual con versión específica**
+   ```bash
+   # Reemplaza 3.11 por tu versión deseada
+   # python3.11 -m venv venv
+   py -3.11 -m venv venv
+   ```
+2. **Verificar versión del entorno virtual**
+   ```bash
+   # Windows
+   venv\Scripts\python --version
 
-bash
-Copy
-Edit
+   # Linux/macOS
+   venv/bin/python --version
+   ```
 
-# git pull origin main
+---
 
-# ☁️ Push your changes to GitHub
+## Ejecutar el proyecto  
+```bash
+python manage.py runserver
+```
 
-bash
-Copy
-Edit
-
-# git push origin main
-
-# 🔁 Use master instead of main if that’s your branch:
-
-bash
-Copy
-Edit
-
-# git branch      # Check your current branch
