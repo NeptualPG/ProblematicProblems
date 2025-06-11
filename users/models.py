@@ -30,7 +30,6 @@ class User(AbstractBaseUser):
         }
     )
     
-    # Campos adicionales recomendados
     date_joined = models.DateTimeField('Fecha de registro', default=timezone.now)
     is_active = models.BooleanField('Activo', default=True)
     is_staff = models.BooleanField('Equipo', default=False)
