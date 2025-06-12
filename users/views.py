@@ -12,7 +12,7 @@ from django.utils.translation import gettext_lazy as _
 
 # start view
 def home(request):
-    return render (request, 'users/home.html')
+    return render (request, 'login.html')
 
 def create_user(request):
     if request.method == 'POST':

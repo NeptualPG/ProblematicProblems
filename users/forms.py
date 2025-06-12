@@ -9,7 +9,7 @@ from django.utils.translation import gettext_lazy as _
 
 # UserCreationForm
 class CustomUserCreationForm (UserCreationForm):
-    class meta (UserCreationForm.meta):
+    class Meta (UserCreationForm.Meta):
         model = User
         # The password 1 and 2 are for the interface.
         # only receives one field as password, the
