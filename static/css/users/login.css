@@ -1,10 +1,10 @@
 div{
-    color: aliceblue;
-    background-color: #1d1d1d;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
 }
 
 body {
-    background-color: #1d1d1d; /* Light grey background */
+    background-color: #ffffff; /* Light grey background */
     background-image: url("https://pixabay.com/images/search/code/");
     padding: 20px;
 }
