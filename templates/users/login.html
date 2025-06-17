@@ -1,100 +1,83 @@
-{% load static %} 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Login Page - My Awesome Web</title>
+{% extends 'components/base.html' %}
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+{% load static %}
 
+{% block title %}Login - ProblematicProblems{% endblock %}
+
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/users/login.css' %}">
-</head>
-<body>
+{% endblock %}
 
-    <!-- PLACEHOLDER FOR HEADER / NAVIGATION -->
+{% block content %}
     <div class="header-placeholder, title">
         <h2>ProblematicProblems</h2>
     </div>
 
-    <div class ="c-c-login">
+    <div class="c-c-login">
         <div class="container d-flex justify-content-center align-items-center ">
             <div class="card shadow-lg">
                 <div class="card-body">
                     <h3 class="card-title text-center mb-4">
-                        <i class=""></i> <!-- Example Bootstrap Icon -->
                         Welcome
                     </h3>
                     
                     <!-- Login Form -->
                     <form id="loginForm">
-                    <!-- Email Address Input Group -->
-                    <div class="mb-3">
-                        <label for="emailInput" class="form-label">Email address</label>
-                        <div class="input-group">
-                            <span class="input-group-text" id="email-addon"><i class="bi bi-envelope-fill"></i></span>
-                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" aria-label="Email Address" aria-describedby="email-addon" required>
-                            <div class="invalid-feedback">
-                                Please enter a valid email address.
+                        <!-- Email Address Input Group -->
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email address</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="email-addon"><i class="bi bi-envelope-fill"></i></span>
+                                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" aria-label="Email Address" aria-describedby="email-addon" required>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Password Input Group -->
-                    <div class="mb-3">
-                        <label for="passwordInput" class="form-label">Password</label>
-                        <div class="input-group">
-                            <span class="input-group-text" id="password-addon"><i class="bi bi-lock-fill"></i></span>
-                            <input type="password" class="form-control" id="passwordInput" placeholder="Enter your password" aria-label="Password" aria-describedby="password-addon" required>
-                            <div class="invalid-feedback">
-                                Password cannot be empty.
+                        
+                        <!-- Password Input Group -->
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="password-addon"><i class="bi bi-lock-fill"></i></span>
+                                <input type="password" class="form-control" id="passwordInput" placeholder="Enter your password" aria-label="Password" aria-describedby="password-addon" required>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Remember Me & Forgot Password -->
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="rememberMeCheck">
-                            <label class="form-check-label" for="rememberMeCheck">
-                                Remember me
-                            </label>
+                        
+                        <!-- Remember Me & Forgot Password -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="rememberMeCheck">
+                                <label class="form-check-label" for="rememberMeCheck">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#" class="form-text text-decoration-none">Forgot password?</a>
                         </div>
-                        <a href="#" class="form-text text-decoration-none">Forgot password?</a>
-                    </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-danger w-100 btn-lg">
+                            <span class="spinner-border spinner-border-sm d-none me-2" role="status" aria-hidden="true"></span>
+                            Login
+                        </button>
+                        <br>
+                        <br>
+                        <!-- Social Login Buttons -->
+                        <a class="btn w-100 mb-2 text-white" style="background-color: #dd4b39;" href="#!" role="button">
+                            <i class="bi bi-google me-2"></i>Continue with Google
+                        </a>
+                        <a class="btn w-100 text-white" style="background-color: #333;" href="#!" role="button">
+                            <i class="bi bi-github me-2"></i>Continue with Github
+                        </a>
+                    </form>
                     
-                    <!-- Submit Button -->
-                    <button type="submit" class="btn btn-danger w-100 btn-lg">
-                        <span class="spinner-border spinner-border-sm d-none me-2" role="status" aria-hidden="true"></span>
-                        Login
-                    </button>
-                    <br>
-                    <br>
-                    <!-- Social Login Buttons (Example) -->
-                    <a class="btn  w-100 mb-2 w-100 text-white" href="#!" role="button">
-                        <i class="bi bi-google me-2"></i>Continue with Google
-                    </a>
-                    <a class="btn bootstrap-icons w-100 text-white" href="#!" role="button">
-                        <i class="bi bi-github me-2"></i>Continue with Github
-                    </a>
-                    
-                </form>
-                
-                <!-- Sign Up Link -->
-                <p class="text-center mt-4">
-                    Don't have an account? <a href="{% url 'create_user' %}" class="text-decoration-none text-black">Sign up</a>
-                </p>
+                    <!-- Sign Up Link -->
+                    <p class="text-center mt-4">
+                        Don't have an account? <a href="{% url 'create_user' %}" class="text-decoration-none text-black">Sign up</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-    
-    <!-- PLACEHOLDER FOR FOOTER -->
-    <!-- Bootstrap JS Bundle (Popper.js included) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="{% static 'js/users/login.js' %}"></script>
+{% endblock %}
 
-</body>
-</html>
+{% block extra_js %}
+    <script src="{% static 'js/users/login.js' %}"></script>
+{% endblock %}
