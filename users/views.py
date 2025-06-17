@@ -30,3 +30,6 @@ def create_user(request):
         
     # GET
     return render(request, 'users/create_user.html', {'form' : form})
+
+def pruebas_paginas(request):
+    return render (request, 'components/sidebars.html')

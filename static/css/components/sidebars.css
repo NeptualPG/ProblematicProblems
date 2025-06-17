@@ -1,0 +1,40 @@
+body {
+    min-height: 100vh;
+    }
+      
+.sidebar-custom {
+    width: 4.5rem;
+    background-color: #fff; 
+    }
+      
+.sidebar-custom .nav-link {
+    color: #0d6efd; 
+    border-radius: 0; 
+}
+
+.sidebar-custom .nav-link.active {
+    background-color: #0d6efd; 
+    color: #fff; 
+}
+
+.sidebar-custom .nav-link:hover:not(.active) {
+    background-color: #eef5ff; 
+}
+
+
+.sidebar-custom .logo-link {
+    padding: 1rem; 
+    margin-bottom: 1rem;
+}
+.sidebar-custom .logo-link svg {
+    width: 40px;
+    height: 32px;
+    color: #fff; 
+    background-color: #ffffff; 
+    border-radius: .5rem; 
+    padding: 4px;
+}
+
+.sidebar-custom .dropdown-toggle::after {
+    display: none; 
+}

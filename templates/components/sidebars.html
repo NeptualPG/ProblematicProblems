@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,50 +8,7 @@
     <title>Sidebar Personalizada</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-  
-    <style>
-      body {
-        min-height: 100vh;
-      }
-      
-      .sidebar-custom {
-        width: 4.5rem;
-        background-color: #fff; 
-      }
-      
-      .sidebar-custom .nav-link {
-        color: #0d6efd; 
-        border-radius: 0; 
-      }
-      
-      .sidebar-custom .nav-link.active {
-        background-color: #0d6efd; 
-        color: #fff; 
-      }
-      
-      .sidebar-custom .nav-link:hover:not(.active) {
-        background-color: #eef5ff; 
-      }
-
-      
-      .sidebar-custom .logo-link {
-          padding: 1rem; 
-          margin-bottom: 1rem;
-      }
-      .sidebar-custom .logo-link svg {
-        width: 40px;
-        height: 32px;
-        color: #fff; 
-        background-color: #212529; 
-        border-radius: .5rem; 
-        padding: 4px;
-      }
-
-      .sidebar-custom .dropdown-toggle::after {
-        display: none; 
-      }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/components/sidebars.css' %}">
     
   </head>
   <body>
@@ -68,9 +27,9 @@
 
     <main class="d-flex flex-nowrap">
         <div class="d-flex flex-column flex-shrink-0 sidebar-custom">
-            <a href="/" class="d-block text-decoration-none logo-link" title="Icon-only" data-bs-toggle="tooltip" data-bs-placement="right">
+            <a href="/" class="d-block text-decoration-none logo-link" title="Nuestro icono" data-bs-toggle="tooltip" data-bs-placement="right">
                 <svg class="bi"><use xlink:href="#bootstrap"/></svg>
-                <span class="visually-hidden">Icon-only</span>
+                <span class="visually-hidden">Nuestro icono</span>
             </a>
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
               <li class="nav-item">
@@ -99,6 +58,8 @@
                 </a>
               </li>
             </ul>
+
+
             <div class="dropdown border-top">
               <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
