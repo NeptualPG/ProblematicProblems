@@ -1,34 +1,7 @@
-div{
-    color: rgb(0, 0, 0);
-    background-color: #ffffff;
-}
+.gradient-custom {
+background: #ffffff;
 
-body {
-    background-color: #ffffff; /* Light grey background */
-    background-image: url("https://pixabay.com/images/search/code/");
-    padding: 20px;
-}
-.login-container {
-    min-height: 100vh; /* Make sure it takes full viewport height */
-}
-.login-card {
-    max-width: 450px;
-    width: 100%;
-    padding: 2rem;
-    border-radius: 0.75rem; /* Softer corners */
-}
-/* Placeholder for where you might put other things of the web */
-.header-placeholder, .footer-placeholder {
-    padding: 1rem;
-    background-color: #1d1d1d;
-    text-align: center;
-    margin-bottom: 2rem; /* Space below header */
-}
-.footer-placeholder {
-    margin-top: 2rem; /* Space above footer */
-    margin-bottom: 0;
-}
+background: -webkit-linear-gradient(to right, rgb(71, 71, 71), rgb(255, 255, 255));
 
-.c-c-login{
-    margin: 130px;
+background: linear-gradient(to right, rgb(61, 61, 61), rgb(255, 255, 255))
 }
