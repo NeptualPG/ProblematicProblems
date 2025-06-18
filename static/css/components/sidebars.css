@@ -1,15 +1,13 @@
-/* css/components/sidebars.css o tu archivo de estilos principal */
-
 body {
     min-height: 100vh;
 }
 
 .sidebar-custom {
-    position: fixed;   /* Cambiado a 'fixed' */
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 80px;       /* Ancho fijo es crucial */
+    width: 80px;
     z-index: 1000;
 
     display: flex;
@@ -18,7 +16,7 @@ body {
     background-color: #f8f9fa;
 }
 
-.main-content-wrapper {
+.main-content-wrapper.has-sidebar {
     margin-left: 80px;
 }
 
