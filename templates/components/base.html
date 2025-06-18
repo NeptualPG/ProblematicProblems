@@ -20,9 +20,11 @@
 </head>
 
 <body>
-      {% include 'components/sidebars.html' %}
+      {% if user.is_authenticated %}
+        {% include 'components/sidebars.html' %}
+      {% endif %}
       
-    <main class="main-content-wrapper">
+    <main class="main-content-wrapper {% if user.is_authenticated %}has-sidebar{% endif %}">
         <div class="container-fluid p-4">
             {% block content %}{% endblock %}
         </div>
