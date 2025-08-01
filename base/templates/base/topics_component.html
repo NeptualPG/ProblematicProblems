@@ -1,0 +1,15 @@
+<h2>TOPICS</h2>
+<hr>
+<div>
+    <a href="{% url 'home' %}">All</a>
+</div>
+{% for topic in topics %}
+    <div>
+        <h4>
+            <a href="{% url 'home' %}?q={{topic.name}}">{{ topic.name }} </a>
+            {% if topic.num_problems %}
+            ({{ topic.num_problems }})
+            {% endif %}
+        </h4>
+    </div>
+{% endfor %}

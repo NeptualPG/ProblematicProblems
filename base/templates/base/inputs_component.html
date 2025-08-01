@@ -1,0 +1,24 @@
+<!-- Solutions -->
+
+<div>
+    <h1>Solutions</h1>
+    <hr>
+    {% for solution in solutions %}
+    <div>
+        <samp><a href="{% url 'user-profile' solution.user.id %}">@{{ solution.user.username }}</a> || {{ solution.created|timesince }} ago</samp>
+        <small><a href="{% url 'problem' solution.problem.id %}">|{{solution.problem}}|</a></small>
+        <h3>
+            <a href="{% url 'solution' solution.id %}">{{ solution }}</a>
+        </h3>
+        
+        {% if request.user == solution.user %}
+            <a href="{% url 'update-solution' solution.id %}">Edit</a>
+            <a href="{% url 'delete-solution' solution.id %}">Delete</a>
+        {% endif %}
+    </div>
+    <hr>
+    {% empty %}
+    <p>No solutions yet.</p>
+    {% endfor %}
+</div>
+    

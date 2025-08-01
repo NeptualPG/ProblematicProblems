@@ -1,0 +1,8 @@
+{% for problem in problems %}
+    <div>                
+        <small>{{problem.level}}</small>
+        <h5>{{problem.id}} -- <a href="{% url 'problem' problem.id %}">{{problem.title}}</a></h5>
+        <small>{{problem.topic.name}}</small>
+        <hr>
+    </div>
+{% endfor %}

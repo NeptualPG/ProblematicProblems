@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+    <div>
+        <h3>{{solution.problem.level}}</h3>
+        <h1><a href="{% url 'problem' solution.problem.id %}">{{solution.problem.title}}</a></h1>
+        <h2>{{solution.problem.description}}</h2>
+    </div>
+    <hr>
+    <div>
+        <h1>User: {{solution.user}}</h1>
+        <hr>
+        <h2>Solution:</h2>
+        <div>          
+            <h2>{{solution.body}}</h2>
+            <hr>            
+        </div>
+    </div>
+
+{% endblock content %}

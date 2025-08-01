@@ -1,0 +1,85 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<style>
+    .problem-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 20px;
+    }
+    .input-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+</style>
+
+<div class="problem-container">
+    <!-- Parte izquierda -->
+    <div>
+        <div>
+            <h3>Difficulty: {{ problem.level }}</h3>
+            <h1>{{ problem.title }}</h1>
+            <h2>{{ problem.description }}</h2>
+        </div>
+
+        <div>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'create-solution' problem.id %}">Create solution</a>
+            {% endif %}
+        </div>
+
+        <div class ="input-container">
+            <div>
+                {% include 'base/inputs_component.html' %}
+            </div>
+            
+            <!-- Conversation -->
+            
+            <div class="comment-wrapper">
+                <h1>Conversation</h1>
+                <hr>
+                {% for message in m_messages %}
+                <div>
+                    {% if request.user == message.user %}
+                    <a href="{% url 'delete-message' message.id %}">Delete</a>
+                    {% endif %}
+                    <small>|| {{ message.created|timesince }} ago  <a href="{% url 'problem' message.problem.id %}">|{{message.problem}}|</a></small>
+                    <p><a href="{% url 'user-profile' message.user.id %}">@[{{ message.user.username }}]</a>: {{ message.body }}</p>
+                    
+                    <hr>
+                </div>
+                {% empty %}
+                <p>No messages yet.</p>
+                {% endfor %}
+                
+                {% if request.user.is_authenticated %}
+                <div class="comment-form">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <input type="text" name="body" placeholder="Write your message here..." required />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+    </div>
+
+    <!-- Parte derecha (Solvers) -->
+    <div>
+        <h2>Solvers</h2>
+        <hr>
+        {% for user in solvers %}
+            <div>
+                <p><a href="{% url 'user-profile' user.id %}">@{{ user.username }}</a></p>
+            </div>
+        {% empty %}
+            <p>No solvers yet.</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
